@@ -29,9 +29,7 @@ export class OrderService {
     for (const [, sessionTickets] of ticketsBySession) {
       const { film: filmId, session: sessionId } = sessionTickets[0];
 
-      const seats = sessionTickets.map(
-        (t) => `${t.row}:${t.seat}`,
-      );
+      const seats = sessionTickets.map((t) => `${t.row}:${t.seat}`);
 
       try {
         const session = await this.filmsRepository.addTakenSeats(

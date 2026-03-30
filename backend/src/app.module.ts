@@ -16,6 +16,7 @@ import { OrderModule } from './order/order.module';
     }),
     ServeStaticModule.forRoot({
       rootPath: path.join(__dirname, '..', 'public'),
+      exclude: ['/api/(.*)'],
       serveStaticOptions: {
         index: false,
       },

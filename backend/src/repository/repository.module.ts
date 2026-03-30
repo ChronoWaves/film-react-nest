@@ -4,9 +4,7 @@ import { FilmSchema } from './film.schema';
 import { FilmsRepository } from './films.repository';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'Film', schema: FilmSchema }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'Film', schema: FilmSchema }])],
   providers: [FilmsRepository],
   exports: [FilmsRepository],
 })

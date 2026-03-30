@@ -42,9 +42,7 @@ export class FilmsRepository {
 
     const alreadyTaken = seats.filter((seat) => session.taken.includes(seat));
     if (alreadyTaken.length > 0) {
-      throw new Error(
-        `Места уже забронированы: ${alreadyTaken.join(', ')}`,
-      );
+      throw new Error(`Места уже забронированы: ${alreadyTaken.join(', ')}`);
     }
 
     session.taken.push(...seats);
