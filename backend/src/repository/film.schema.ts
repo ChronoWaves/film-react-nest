@@ -1,4 +1,4 @@
-import { Schema, Document, model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 export interface ISchedule {
   id: string;
@@ -23,7 +23,7 @@ export interface IFilm {
   schedule: ISchedule[];
 }
 
-export type FilmDocument = IFilm & Document;
+export type FilmDocument = IFilm;
 
 const ScheduleSchema = new Schema<ISchedule>(
   {

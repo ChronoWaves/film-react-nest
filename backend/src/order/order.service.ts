@@ -55,11 +55,13 @@ export class OrderService {
             price: ticket.price || session.price,
           });
         }
-      } catch (error) {
+      } catch (error: unknown) {
         if (error instanceof BadRequestException) {
           throw error;
         }
-        throw new BadRequestException(error.message);
+        throw new BadRequestException(
+          error instanceof Error ? error.message : 'Ошибка бронирования',
+        );
       }
     }
 
